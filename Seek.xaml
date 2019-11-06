@@ -16,7 +16,8 @@
                 <GradientStop Offset="0.522" Color="White" />
             </LinearGradientBrush>
         </Grid.Background>
-        <ComboBox x:Name="combo_SeekType"
+        <ComboBox
+            x:Name="combo_SeekType"
             Width="120"
             Margin="351,59,0,0"
             HorizontalAlignment="Left"
@@ -31,12 +32,13 @@
             VerticalAlignment="Top"
             FontSize="14"
             TextWrapping="Wrap" />
-        <Button x:Name="btn_Seek"
+        <Button
+            x:Name="btn_Seek"
             Margin="499,59,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Søgning"
-            FontSize="14" />
+            FontSize="14" Click="btn_Seek_Click" />
         <Label
             Margin="351,25,0,0"
             HorizontalAlignment="Left"

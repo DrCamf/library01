@@ -22,5 +22,10 @@ namespace library01
         {
             InitializeComponent();
         }
+
+        private void btn_Seek_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
