@@ -21,6 +21,7 @@ namespace library01
     {
 
         List<string> nonWords = new List<string>();
+
         public Login()
         {
             InitializeComponent();
@@ -29,23 +30,29 @@ namespace library01
             nonWords.Add("update");
             nonWords.Add("insert");
             nonWords.Add("table");
+            
         }
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
+            HashAndSalt hSalt = new HashAndSalt();
+            DBhandling dbcmd = new DBhandling();
+
             string userName = box_BrugerName.Text;
             string userPass = box_Password.Text;
 
-            if(testUserName(userName))
+            /*if(testUserName(userName))
             {
                 MessageBox.Show("Welcome");
             } else
             {
                 MessageBox.Show("Your name contain illegal characters");
                 return;
-            }
+            }*/
+            string salt = hSalt.CreateSalt(10);
+            string hashedpassword = hSalt.GenerateSHA256Hash(userPass, salt);
 
-
+            box_Reveal.Text = hashedpassword;
         }
 
         private bool testUserName(string input)
@@ -58,9 +65,7 @@ namespace library01
             {
                 if (input.Contains(s) || input.Contains(s.ToUpper()) || input == "" || result == false )
                 {
-                                          
-                        isLegal = false;
-                    
+                    isLegal = false;
                 }
                 else
                 {
@@ -69,5 +74,8 @@ namespace library01
             }
             return isLegal;
         }
+
+
+        
     }
 }
