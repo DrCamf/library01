@@ -38,8 +38,27 @@ namespace library01
             HashAndSalt hSalt = new HashAndSalt();
             DBhandling dbcmd = new DBhandling();
 
-            string userName = box_BrugerName.Text;
-            string userPass = box_Password.Text;
+            int userName;
+            string userPass = "";
+
+
+            if (int.TryParse(box_BrugerName.Text, out userName))
+            {
+                if (box_Password.Text != "")
+                {
+                    userPass = box_Password.Text;
+                }else
+                {
+                    MessageBox.Show("You must write your password");
+                    return;
+                }
+                
+            } else
+            {
+                MessageBox.Show("There is only numbers in the login");
+                return;
+            }
+           
 
             /*if(testUserName(userName))
             {
