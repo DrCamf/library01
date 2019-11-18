@@ -7,8 +7,6 @@ namespace library01
     class HashAndSalt
     {
 
-
-
         public string ByteArrayToHexString(byte[] ba)
         {
             StringBuilder hex = new StringBuilder(ba.Length * 2);

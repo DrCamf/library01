@@ -20,16 +20,12 @@ namespace library01
     public partial class Login : Page
     {
 
-        List<string> nonWords = new List<string>();
+        
 
         public Login()
         {
             InitializeComponent();
-            nonWords.Add("drop");
-            nonWords.Add("database");
-            nonWords.Add("update");
-            nonWords.Add("insert");
-            nonWords.Add("table");
+           
             
         }
 
@@ -40,13 +36,26 @@ namespace library01
 
             int userName;
             string userPass = "";
-
+            string salt, hashedpassword, mere;
+            string mereud;
 
             if (int.TryParse(box_BrugerName.Text, out userName))
             {
                 if (box_Password.Text != "")
                 {
-                    userPass = box_Password.Text;
+                    mereud = dbcmd.returnFromSPLoginTjeck(userName);
+                    salt = hSalt.CreateSalt(10);
+                    hashedpassword = hSalt.GenerateSHA256Hash(userPass, salt);
+                    mere = hSalt.GenerateSHA256Hash(mereud, salt);
+                    
+                    if (hashedpassword == mere)
+                    {
+                        MessageBox.Show("You were correct");
+                    } else
+                    {
+                        MessageBox.Show("Wrong Wrong Wrong");
+                    }
+                    
                 }else
                 {
                     MessageBox.Show("You must write your password");
@@ -58,23 +67,15 @@ namespace library01
                 MessageBox.Show("There is only numbers in the login");
                 return;
             }
-           
 
-            /*if(testUserName(userName))
-            {
-                MessageBox.Show("Welcome");
-            } else
-            {
-                MessageBox.Show("Your name contain illegal characters");
-                return;
-            }*/
-            string salt = hSalt.CreateSalt(10);
-            string hashedpassword = hSalt.GenerateSHA256Hash(userPass, salt);
 
+
+
+            box_Reveal2.Text = mere;
             box_Reveal.Text = hashedpassword;
         }
 
-        private bool testUserName(string input)
+       /* private bool testUserName(string input)
         {
             bool isLegal = false;
             Regex rex = new Regex("^[-'a-zA-Z]*$", RegexOptions.IgnoreCase);
@@ -92,7 +93,7 @@ namespace library01
                 }
             }
             return isLegal;
-        }
+        }*/
 
 
         

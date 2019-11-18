@@ -18,19 +18,23 @@ namespace library01
             con = new SqlConnection(connectionString);
         }
 
-        public string returnFromSPLoginTjeck(string input)
+        public string returnFromSPLoginTjeck(int input)
         {
             SqlDataReader rdr = null;
             string outgoing = "";
             try
             {
                 SqlCommand cmd = new SqlCommand("LoginTjeck", con);
-
+                con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@kLog", input));
 
                 rdr = cmd.ExecuteReader();
-                outgoing = rdr.ToString();
+                while(rdr.Read())
+                {
+                    outgoing = rdr["konto_Password"].ToString();
+                }
+                
             }
             finally
             {

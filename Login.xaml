@@ -57,8 +57,16 @@
         <TextBox
             x:Name="box_Reveal"
             Width="192"
-            Height="291"
+            Height="108"
             Margin="26,137,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="box_Reveal2"
+            Width="192"
+            Height="108"
+            Margin="26,284,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
