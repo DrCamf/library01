@@ -9,38 +9,34 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                <GradientStop Offset="0.028" Color="Black" />
-                <GradientStop Offset="0.522" Color="White" />
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Background="#FFEAEAEA">
         <ComboBox
             x:Name="combo_SeekType"
             Width="120"
-            Margin="351,59,0,0"
+            Margin="351,112,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="14" />
+            FontSize="14"
+            SelectedIndex="0" SelectionChanged="combo_SeekType_SelectionChanged" />
         <TextBox
             x:Name="box_Seek"
             Width="179"
             Height="25"
-            Margin="137,59,0,0"
+            Margin="137,112,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="14"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"  />
         <Button
             x:Name="btn_Seek"
-            Margin="499,59,0,0"
+            Margin="499,112,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btn_Seek_Click"
             Content="Søgning"
-            FontSize="14" Click="btn_Seek_Click" />
+            FontSize="14" />
         <Label
-            Margin="351,25,0,0"
+            Margin="351,78,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="{x:Null}"
@@ -49,12 +45,69 @@
             Foreground="#FFF0E5E5" />
         <TextBlock
             Width="475"
-            Height="263"
-            Margin="137,0,0,0"
+            Height="264"
+            Margin="137,157,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            VerticalAlignment="Top"
             Text="TextBlock"
             TextWrapping="Wrap" />
+        <Rectangle
+            Width="800"
+            Height="63"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Fill="#FF656BE4"
+            RenderTransformOrigin="0.5,0.5"
+            Stroke="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1" />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <RadioButton
+            x:Name="radio_Seek_Titel"
+            Margin="137,78,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Titel"
+            FontSize="14"
+            GroupName="strSeek" 
+            Checked="RadioButton_Checked"/>
+        <RadioButton
+            x:Name="radio_Seek_Author"
+            Margin="207,78,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Forfatter"
+            FontSize="14"
+            GroupName="strSeek" 
+            Checked="RadioButton_Checked"/>
+        <RadioButton
+            x:Name="radio_Seek_Year"
+            Margin="306,78,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Year"
+            FontSize="14"
+            GroupName="strSeek" 
+            Checked="RadioButton_Checked"/>
+        <RadioButton
+            x:Name="radio_Seek_Emne"
+            Margin="0,78,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Emne"
+            FontSize="14"
+            GroupName="strSeek"
+            Checked="RadioButton_Checked"/>
+        <GroupBox
+            x:Name="grpSubject"
+            Margin="123,63,359,343"
+            Header="" />
 
     </Grid>
 

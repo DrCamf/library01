@@ -10,13 +10,7 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                <GradientStop Offset="0.028" Color="Black" />
-                <GradientStop Offset="0.522" Color="White" />
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Background="#FFEAEAEA">
         <TextBox
             x:Name="box_CreateLogin"
             Width="120"
@@ -77,5 +71,15 @@
             VerticalAlignment="Top"
             FontSize="14"
             TextWrapping="Wrap" />
+        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="800" RenderTransformOrigin="0.5,0.5" Fill="#FF656BE4">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
     </Grid>
 </Page>

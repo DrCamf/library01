@@ -10,12 +10,99 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                <GradientStop Offset="0.028" Color="Black" />
-                <GradientStop Offset="0.522" Color="White" />
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Background="#FFEAEAEA">
+        <Rectangle
+            Width="800"
+            Height="63"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Fill="#FF656BE4"
+            RenderTransformOrigin="0.5,0.5"
+            Stroke="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1" />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <ComboBox
+            x:Name="comboAddType"
+            Width="120"
+            Margin="52,96,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="14"
+            SelectedIndex="0"
+             />
+        <ComboBox
+            x:Name="comboAddGenre"
+            Width="91"
+            Margin="232,99,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"  
+            SelectedIndex="0"/>
+        <ComboBox
+            x:Name="comboAddEmne"
+            Width="91"
+            Margin="343,97,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" RenderTransformOrigin="0.46,0.457" 
+            SelectedIndex="0"/>
+        <Label
+            Margin="52,70,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Medie Type"
+            FontSize="14" />
+        <TextBox x:Name="box_AddTitle"
+            Width="120"
+            Margin="52,142,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="14"
+            Text="Title"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="box_NewGenre"
+            Width="91"
+            Margin="232,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Ny genre"
+            TextWrapping="Wrap" FontSize="14" />
+        <DatePicker
+            x:Name="box_AddOutDate"
+            Margin="93,199,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" FontSize="14" 
+            />
+        <Label
+            Margin="10,195,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Udgivelse"
+            FontSize="14" />
+        <Label
+            Margin="10,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Oprettelse"
+            FontSize="14" 
+            />
+        <DatePicker x:Name="box_AddOpretDate" HorizontalAlignment="Left" Margin="93,244,0,0" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="232,70,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="btn_AddNewGenre" Content="Ny" HorizontalAlignment="Left" Margin="234,161,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="box_NewEmne" HorizontalAlignment="Left" Margin="343,134,0,0" Text="Nyt emne" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" FontSize="14"/>
+        <Label Content="Emne" HorizontalAlignment="Left" Margin="343,67,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="btn_AddNewEmne" Content="Ny" HorizontalAlignment="Left" Margin="343,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,2.167" Width="22" FontSize="14" Click="btn_AddNewEmne_Click"/>
+        <TextBox x:Name="box_AddTest" HorizontalAlignment="Left" Margin="591,84,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Height="246"/>
+        <Button x:Name="btn_AddGenre" Content="Tilføj" HorizontalAlignment="Left" Margin="289,161,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="btn_AddEmne" Content="Tilføj" HorizontalAlignment="Left" Margin="400,161,0,0" VerticalAlignment="Top" FontSize="14" Click="btn_AddEmne_Click"/>
+        <WrapPanel Margin="211,70,462,256"/>
+        <Button x:Name="btn_AddMedieInto" Content="Opret Medie" HorizontalAlignment="Left" Margin="640,385,0,0" VerticalAlignment="Top" FontSize="14" Click="btn_AddMedieInto_Click"/>
+        
     </Grid>
 </Page>

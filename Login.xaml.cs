@@ -75,27 +75,16 @@ namespace library01
             box_Reveal.Text = hashedpassword;
         }
 
-       /* private bool testUserName(string input)
+        private void btn_seeking_Click(object sender, RoutedEventArgs e)
         {
-            bool isLegal = false;
-            Regex rex = new Regex("^[-'a-zA-Z]*$", RegexOptions.IgnoreCase);
+            Seek seek = new Seek();
+            this.NavigationService.Navigate(seek);
+        }
 
-            bool result = rex.IsMatch(input);
-            foreach (string s in nonWords)
-            {
-                if (input.Contains(s) || input.Contains(s.ToUpper()) || input == "" || result == false )
-                {
-                    isLegal = false;
-                }
-                else
-                {
-                    isLegal = true;
-                }
-            }
-            return isLegal;
-        }*/
-
-
-        
+        private void btn_AddMedie_Click(object sender, RoutedEventArgs e)
+        {
+            AddMedie medie = new AddMedie();
+            this.NavigationService.Navigate(medie);
+        }
     }
 }
